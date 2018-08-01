@@ -1,5 +1,87 @@
-/* 
+/*Task 1. Print version of the web-page*/
 
-write your code here
+@media print {
+    .tm-sidebar, .tm-main-content section #about, .heading.tm-content-box, .blocks, #ideas, section.tm-content-box {
+        display: none;
+    }
+    .tm-banner {
+        height: 250px;
+    }
+    #home, .tm-main-content {
+        margin: 0px;
+        padding: 0px;
+    }
+    .tm-content-box.flex-2-col {
+        flex-direction: column;
+    }
+    .pad.flex-item.tm-team-description-container:first-child>h2.tm-section-title {
+        color: blue;
+    }
+    .pad.flex-item.tm-team-description-container {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        max-width: 95%;
+    }
+}
 
-*/
+/*TASK 2. Images within tiles should be rounded and tiles with text should have hover effect*/
+
+li.box.box-bg h2:hover {
+    color: white;
+    font-weight: bold;
+    background-color: #31B0D5;
+}
+
+.tm-section-title.tm-section-title-box.tm-box-bg-title {
+    font-size: 45px;
+}
+
+#about .box img {
+    border-radius: 50%;
+}
+
+/*TASK 3. Change color of first letter in each paragraphs to #76cdd7 and font size to 30px*/
+
+p {
+    font-size: 30px;
+}
+
+p::first-letter {
+    color: #76cdd7;
+}
+
+/*TASK 4. Add box shadow to sidebar and each content block*/
+
+#home, .tm-sidebar, section {
+    box-shadow: 0px 0px 7px 7px lightgray;
+}
+
+/*!!!TASK 5. Add triangle to each section on the page using pseudo elements*/
+
+section::before {
+    box-shadow: 0px 0px 20px 20px black;
+}
+
+/*TASK 6. Change color of ‘How We Do It’ to gainsboro and add letter spacing 5px*/
+
+#ideas h2 {
+    color: gainsboro;
+    letter-spacing: 5px;
+}
+
+/*!!!TASK 7. Each first paragraph which placed after h2 tag should have italic font style*/
+
+div h2>p {
+    font-style: italic;
+    color: blue;
+}
+
+/*TASK 8.*/
+
+/*TASK 9.*/
+
+/*TASK 10.*/
+
+/*TASK 11.*/
+
+/*TASK 12.*/
