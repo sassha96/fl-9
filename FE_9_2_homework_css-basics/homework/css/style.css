@@ -11,10 +11,16 @@
         margin: 0px;
         padding: 0px;
     }
-    .tm-content-box.flex-2-col {
-        flex-direction: column;
+    .tm-content-box {
+        display: block;
     }
-    .pad.flex-item.tm-team-description-container:first-child>h2.tm-section-title {
+    .pad.flex-item.tm-team-description-container+.flex-item {
+        text-align: center;
+    }
+    p {
+        font-size: 16px;
+    }
+    .pad.flex-item.tm-team-description-container h2 {
         color: blue;
     }
     .pad.flex-item.tm-team-description-container {
@@ -24,64 +30,97 @@
     }
 }
 
-/*TASK 2. Images within tiles should be rounded and tiles with text should have hover effect*/
-
-li.box.box-bg h2:hover {
-    color: white;
-    font-weight: bold;
-    background-color: #31B0D5;
+@media screen {
+    /*TASK 2. Images within tiles should be rounded and tiles with text should have hover effect*/
+    #about h2:hover {
+        color: white;
+        font-weight: bold;
+        background-color: #31B0D5;
+    }
+    #about h2 {
+        background: white;
+        font-size: 40px;
+    }
+    #about img {
+        border-radius: 50%;
+    }
+    /*TASK 3. Change color of first letter in each paragraphs to #76cdd7 and font size to 30px*/
+    p::first-letter {
+        color: #76cdd7;
+        font-size: 30px;
+    }
+    /*TASK 4. Add box shadow to sidebar and each content block*/
+    #home, .tm-sidebar, section {
+        box-shadow: 0px 0px 7px 7px lightgray;
+    }
+    /*TASK 5. Add triangle to each section on the page using pseudo elements*/
+    section::before, #home::before {
+        content: "";
+        position: absolute;
+        float: left;
+        border-top: 27px solid #31B0D5;
+        border-right: 150px solid transparent;
+    }
+    /*TASK 6. Change color of ‘How We Do It’ to gainsboro and add letter spacing 5px*/
+    #ideas h2 {
+        color: gainsboro;
+        letter-spacing: 5px;
+    }
+    /*TASK 7. Each first paragraph which placed after h2 tag should have italic font style*/
+    h2+p {
+        font-style: italic;
+    }
+    /*TASK 8. Vertical space between lines is increased, there is some free space at the start of the first line*/
+    .pad.flex-item.tm-team-description-container .tm-section-description {
+        line-height: 35px;
+        text-indent: 25px;
+    }
+    /*TASK 9. Already visited links silver color;
+	the hovered links should look like “6. Architects” item
+	‘new’ label to the end of words. It should be applied only for ‘Designers’ and ‘Strategists’ items.
+    */
+    .heading .pad h2 {
+        color: #31B0D5;
+        text-align: center;
+    }
+    .pad li:nth-child(1):after, .pad li:nth-child(3):after {
+        content: 'New';
+        font-size: 10px;
+        color: red;
+        vertical-align: top;
+    }
+    .pad li a:visited {
+        color: silver;
+    }
+    .pad li a:hover {
+        color: #31B0D5;
+    }
+    /*TASK 10. Layout and styles for following block*/
+    .tm-content-box .boxes.gallery-container li.box:nth-child(2n+1) {
+        background-color: #f2f2f2;
+    }
+    .box p::first-letter {
+        color: gray;
+    }
+    .box p {
+        font-size: 23px;
+    }
+    /*TASK 11. Sidebar silver border to the bottom of each item, except the last one*/
+    .tm-main-nav {
+        padding: 0px;
+    }
+    .tm-nav-item:not(:last-child) {
+        border-bottom: 2px dotted lightgrey;
+    }
+    /*TASK 12. Red text color of text inputs and submit button, add asterisk after email input*/
+    input[type='text'], button[type='submit'] {
+        color: red;
+    }
+    button[type='submit']:hover {
+        background-color: #31B0D5;
+    }
+    .mandatory-field::after {
+        content: '*';
+        color: red;
+    }
 }
-
-.tm-section-title.tm-section-title-box.tm-box-bg-title {
-    font-size: 45px;
-}
-
-#about .box img {
-    border-radius: 50%;
-}
-
-/*TASK 3. Change color of first letter in each paragraphs to #76cdd7 and font size to 30px*/
-
-p {
-    font-size: 30px;
-}
-
-p::first-letter {
-    color: #76cdd7;
-}
-
-/*TASK 4. Add box shadow to sidebar and each content block*/
-
-#home, .tm-sidebar, section {
-    box-shadow: 0px 0px 7px 7px lightgray;
-}
-
-/*!!!TASK 5. Add triangle to each section on the page using pseudo elements*/
-
-section::before {
-    box-shadow: 0px 0px 20px 20px black;
-}
-
-/*TASK 6. Change color of ‘How We Do It’ to gainsboro and add letter spacing 5px*/
-
-#ideas h2 {
-    color: gainsboro;
-    letter-spacing: 5px;
-}
-
-/*!!!TASK 7. Each first paragraph which placed after h2 tag should have italic font style*/
-
-div h2>p {
-    font-style: italic;
-    color: blue;
-}
-
-/*TASK 8.*/
-
-/*TASK 9.*/
-
-/*TASK 10.*/
-
-/*TASK 11.*/
-
-/*TASK 12.*/
