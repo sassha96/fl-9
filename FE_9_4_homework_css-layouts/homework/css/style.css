@@ -403,21 +403,10 @@ footer {
     color: #000;
 }
 
-.blocks{
-    width: 100%;
-}
-.blocks .article-text{
+.article-text{
     width: 40%;
     padding: 20px 10px 20px 10px;
     font-size: 1vw;
     text-align: center;
     align-self: center;
-}
-
-.block-1 blocks{
-    padding: 0;
-}
-
-.img1{
-    margin-bottom: 0px;
 }
