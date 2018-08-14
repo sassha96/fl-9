@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --bg-color--dark: #0a1223;
     --bg-color--light: #fff;
     --link: #5d5d5d;
@@ -11,7 +11,7 @@
     --btn-bg-color: #5ebcff;
     --navigation-border-bottom: #ddd;
     --thumbnail-title: #484747;
-}
+} */
 
 * {
     margin: 0;
@@ -24,13 +24,13 @@ a {
 }
 
 body {
-    background-color: var(--bg-color--dark);
+    background-color: #0a1223;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 body h1 {
     text-align: center;
-    color: var(--article-title);
+    color: #ddd;
     font-size: 5vw;
 }
 
@@ -51,17 +51,17 @@ nav li {
 }
 
 nav a {
-    color: var(--link);
+    color: #5d5d5d;
     font-size: 1.2vw;
     margin-right: 35px;
 }
 
 nav li:first-child a {
-    color: var(--link--active);
+    color: #54597d;
 }
 
 nav a:hover {
-    color: var(--link--hover);
+    color: #54597d;
 }
 
 .facts {
@@ -90,7 +90,7 @@ nav a:hover {
 }
 
 .box .text p {
-    color: var(--thumbnail--description);
+    color: #5d5d5d;
     text-indent: 20px;
     text-align: justify;
 }
@@ -139,11 +139,11 @@ a.scrool {
 
 @media screen and (max-width: 575px) {
     body {
-        background-color: var(--bg-color--light);
+        background-color: #fff;
     }
 
     body h1 {
-        color: var(--article-title--dark);
+        color: #000;
         font-size: 15vw;
     }
 
@@ -156,7 +156,7 @@ a.scrool {
     nav li {
         height: 40px;
         padding-top: 8px;
-        border-bottom: 1px solid var(--navigation-border-bottom);
+        border-bottom: 1px solid #ddd;
     }
 
     nav li:first-child a {
@@ -173,7 +173,7 @@ a.scrool {
     }
 
     .box h2 {
-        background: -webkit-linear-gradient(var(--thumbnail-title), var(--thumbnail-title));
+        background: -webkit-linear-gradient(#484747, #484747);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -183,8 +183,8 @@ a.scrool {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background-color: var(--btn-bg-color);
-        color: var(--btn-color);
+        background-color: #5ebcff;
+        color: #fff;
         position: fixed;
         text-align: center;
         padding-top: 16px;
