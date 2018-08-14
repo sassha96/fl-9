@@ -19,6 +19,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: var(--bg-color--dark);
     font-family: Arial, Helvetica, sans-serif;
@@ -26,7 +30,7 @@ body {
 
 body h1 {
     text-align: center;
-    color: #ddd;
+    color: var(--article-title);
     font-size: 5vw;
 }
 
@@ -47,18 +51,17 @@ nav li {
 }
 
 nav a {
-    text-decoration: none;
-    color: #5d5d5d;
+    color: var(--link);
     font-size: 1.2vw;
     margin-right: 35px;
 }
 
 nav li:first-child a {
-    color: #54597d;
+    color: var(--link--active);
 }
 
 nav a:hover {
-    color: #54597d;
+    color: var(--link--hover);
 }
 
 .facts {
@@ -99,6 +102,10 @@ nav a:hover {
 
 .box:nth-child(2n+2) {
     flex-direction: row-reverse;
+}
+
+a.scrool {
+    display: none;
 }
 
 @media screen and (max-width: 991px) {
@@ -158,7 +165,7 @@ nav a:hover {
     nav li {
         height: 40px;
         padding-top: 8px;
-        border-bottom: 1px solid gainsboro;
+        border-bottom: 1px solid var(--navigation-border-bottom);
     }
 
     nav li:first-child a {
@@ -174,12 +181,24 @@ nav a:hover {
         margin-top: 100px;
     }
 
-    .box .text h2 {
-        color: yellow;
-        background: none;
+    .box h2 {
+        background: -webkit-linear-gradient(var(--thumbnail-title), var(--thumbnail-title));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-        /*-webkit-linear-gradient( #ddd, #333); */
-        /* -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; */
+    a.scrool {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--btn-bg-color);
+        color: var(--btn-color);
+        position: fixed;
+        text-align: center;
+        padding-top: 16px;
+        bottom: 30px;
+        right: 30px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 }
