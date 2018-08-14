@@ -6,7 +6,7 @@
     --link--hover: #54597d;
     --article-title: #ddd;
     --article-title--dark: #000;
-    --thumbnail--description: #4d3e3e;
+    --thumbnail--description: #5d5d5d;
     --btn-color: #fff;
     --btn-bg-color: #5ebcff;
     --navigation-border-bottom: #ddd;
@@ -38,7 +38,7 @@ body h1 span {
     font-style: italic;
 }
 
-nav {
+nav ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -90,7 +90,7 @@ nav a:hover {
 }
 
 .box .text p {
-    color: #5d5d5d;
+    color: var(--thumbnail--description);
     text-indent: 20px;
     text-align: justify;
 }
@@ -109,17 +109,13 @@ a.scrool {
 }
 
 @media screen and (max-width: 991px) {
-    body {
-        background-color: var(--bg-color--dark);
-    }
-
     body h1 {
         font-size: 7vw;
         padding-left: 5%;
         padding-right: 5%;
     }
 
-    nav {
+    nav ul {
         justify-content: center;
     }
 
@@ -127,12 +123,7 @@ a.scrool {
         font-size: 2vw;
     }
 
-    .facts {
-        flex-direction: column;
-    }
-
     .box {
-        width: 100%;
         flex-direction: column;
     }
 
@@ -156,7 +147,7 @@ a.scrool {
         font-size: 15vw;
     }
 
-    nav {
+    nav ul {
         padding-top: 0;
         margin-bottom: 50px;
         flex-direction: column;
