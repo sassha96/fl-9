@@ -1,0 +1,154 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+
+:root {
+    /* --bg-color--dark: #0a1223;
+    --bg-color--light: #fff; */
+    --link: #5d5d5d;
+    --link--active: #54597d;
+    --link--hover: #54597d;
+    --article-title: #ddd;
+    --article-title--dark: #000;
+    --thumbnail--description: #4d3e3e;
+
+    /* These styles are needed only for media query max-width: 575px */
+    /* The 'Up' button (circle button at right bottom corner) */
+    --btn-color: #fff;
+    --btn-bg-color: #5ebcff;
+    --navigation-border-bottom: #ddd;
+    --thumbnail-title: #484747;
+}
+
+/* Your styles go here */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a1223;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+body h1 {
+    text-align: center;
+    color: #ddd;
+    font-size: 5vw;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    margin-right: 35px;
+}
+
+@media screen and (max-width: 575px) {
+    body {
+        background-color: #fff;
+    }
+    nav {
+      flex-direction: column;
+     
+  }
+}
+
+@media screen and (min-width: 576px) {
+    body {
+        background-color: #0a1223;
+        width: 100%;
+    }
+
+    nav {
+        flex-direction: row;
+        margin-top: 25px;
+        margin-bottom: 200px;
+        justify-content: center;
+    }
+    .facts{
+      display: flex;
+      flex-direction: column;
+    }
+    .box{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body h1 span {
+        font-style: italic;
+    }
+
+    nav {
+        justify-content: flex-end;
+        padding-top: 25px;
+        margin-bottom: 180px;
+    }
+
+    nav a {
+        color: #5d5d5d;
+        font-size: 1.2vw;
+    }
+
+    nav li:first-child a {
+        color: #54597d;
+    }
+
+    nav a:hover {
+        color: #54597d;
+    }
+
+    .facts {
+        margin: 150px 13% 100px 13%;
+    }
+
+    .box {
+        display: flex;
+        justify-content: space-between;
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+
+    .box h2 {
+        font-size: 30px;
+        padding-bottom: 25px;
+        background: -webkit-linear-gradient(left, #ddd, #333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .box .text, .box .image {
+        width: 50%;
+        height: 100%;
+        padding: 20px;
+    }
+
+    .box .text p {
+        color: #5d5d5d;
+        text-indent: 20px;
+        text-align: justify;
+    }
+
+    .box .image img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .box:nth-child(2n+2) {
+        flex-direction: row-reverse;
+    }
+}
