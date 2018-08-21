@@ -8,25 +8,24 @@ if (decision === false) {
     const FIVE = 5;
     const TEN = 10;
     const signedONE = -1;
-
     let rangeMultiplicator = 5;
     let moneyMultiplicator = 1;
     let userChoice;
     let totalPrize = 0;
     let attemps = 3;
     let currentPrize;
-
     let num = Math.floor(Math.random() * (rangeMultiplicator + ONE));
     for (let i = 0; i < 3; i++) {
-
         currentPrize = TEN * moneyMultiplicator;
         switch (attemps) {
             case TWO: currentPrize = parseInt(FIVE * moneyMultiplicator); break;
             case ONE: currentPrize = parseInt(FIVE / 2 * moneyMultiplicator); break;
             default: break;
         }
-        userChoice = prompt(`Enter a number from 0 to ${rangeMultiplicator}\n
-Attempts left: ${attemps}\nTotal prize: ${totalPrize}$\nPossible prize on current attempt: ${currentPrize}$`, '0');
+        userChoice = prompt(`Enter a number from 0 to ${rangeMultiplicator}
+Attempts left: ${attemps}
+Total prize: ${totalPrize}$
+Possible prize on current attempt: ${currentPrize}$`, '0');
         if (userChoice === num) {
             switch (attemps) {
                 case THREE: totalPrize += TEN * moneyMultiplicator; break;
