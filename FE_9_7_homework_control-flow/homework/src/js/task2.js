@@ -2,12 +2,12 @@ let decision = confirm('Do you want to play a game?')
 if (decision === false) {
     console.log('You did not become a millionaire, but can.')
 } else {
-    const ONE = 1;
-    const TWO = 2;
-    const THREE = 3;
-    const FIVE = 5;
-    const TEN = 10;
-    const signedONE = -1;
+    let ONE = 1;
+    let TWO = 2;
+    let THREE = 3;
+    let FIVE = 5;
+    let TEN = 10;
+    let signedONE = -1;
     let rangeMultiplicator = 5;
     let moneyMultiplicator = 1;
     let userChoice;
@@ -22,10 +22,10 @@ if (decision === false) {
             case ONE: currentPrize = parseInt(FIVE / 2 * moneyMultiplicator); break;
             default: break;
         }
-        userChoice = prompt(`Enter a number from 0 to ${rangeMultiplicator}
+        userChoice = parseInt(prompt(`Enter a number from 0 to ${rangeMultiplicator}
 Attempts left: ${attemps}
 Total prize: ${totalPrize}$
-Possible prize on current attempt: ${currentPrize}$`, '0');
+Possible prize on current attempt: ${currentPrize}$`, '0'));
         if (userChoice === num) {
             switch (attemps) {
                 case THREE: totalPrize += TEN * moneyMultiplicator; break;
