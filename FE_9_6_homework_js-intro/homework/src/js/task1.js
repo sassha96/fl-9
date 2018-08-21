@@ -1,6 +1,6 @@
 let moneyAmount = parseFloat(prompt('Enter amount of money:', 0));
 if (moneyAmount > 0) {
-    let discount = parseFloat(prompt('Enter the discount:'), 0);
+    const discount = parseFloat(prompt('Enter the discount:'), 0);
     if (discount > 0) {
         let savedMoney = moneyAmount * (discount / 100);
         let discountedPrice = moneyAmount - savedMoney;
