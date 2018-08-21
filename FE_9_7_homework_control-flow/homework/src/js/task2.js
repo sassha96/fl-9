@@ -2,12 +2,12 @@ let decision = confirm('Do you want to play a game?')
 if (decision === false) {
     console.log('You did not become a millionaire, but can.')
 } else {
-    let ONE = 1;
-    let TWO = 2;
-    let THREE = 3;
-    let FIVE = 5;
-    let TEN = 10;
-    let signedONE = -1;
+    const ONE = 1;
+    const TWO = 2;
+    const THREE = 3;
+    const FIVE = 5;
+    const TEN = 10;
+    const signedONE = -1;
     let rangeMultiplicator = 5;
     let moneyMultiplicator = 1;
     let userChoice;
