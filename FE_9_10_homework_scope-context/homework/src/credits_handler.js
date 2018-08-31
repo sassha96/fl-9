@@ -89,7 +89,7 @@ class UserAccount {
         if (this.cards[key - 1]) {
             return this.cards[key - 1];
         } else {
-            return console.log(`No such card key, add a new card or try in range from 1 to ${this.maxCardsAmount}`);
+            return console.log(`No such card key, add a new card or try in range up to ${this.maxCardsAmount}`);
         }
     }
 }
