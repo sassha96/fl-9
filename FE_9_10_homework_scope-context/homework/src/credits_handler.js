@@ -57,7 +57,7 @@ function userCard(index) {
                 reciever.putCredits(amount);
                 options.historyLogs.push({
                     operationType: `Withdrawal or credit`,
-                    credits: amount,
+                    credits: amountWithFees,
                     operationTime: new Date().toLocaleString('en-GB')
                 })
             } else if (amount > options.balance) {
