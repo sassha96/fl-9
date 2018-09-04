@@ -48,7 +48,7 @@ let contentNode = (function createList() {
     }
 
     class Item {
-        constructor(id, desc) {
+        constructor(id) {
             this.id = id;
         }
     }
