@@ -81,7 +81,6 @@ let contentNode = (function createList() {
 
                 const item = document.createElement('li');
                 item.setAttribute('class', `items item-${ID}`);
-                // item.setAttribute('draggable', 'true');
 
                 const itemsFirstBlock = document.createElement('div');
                 const ico = document.createElement('i');
