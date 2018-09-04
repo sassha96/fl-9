@@ -1,2 +1,86 @@
-/* Your styles goes here */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+i {
+    cursor: pointer;
+}
+
+.main-container {
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.headerElements {
+    height: 125px;
+    border-bottom: 2px solid black;
+    margin-left: 15px;
+    margin-right: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headerElements h1 {
+    padding-top: 20px;
+}
+
+.header-input-block {
+    width: 498px;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.headerElements input {
+    margin: 0 5px 0 0;
+    padding: 3px;
+    width: 470px;
+}
+
+.listItemsBlock {
+    height: 275px;
+    overflow: auto;
+    padding: 10px 35px 10px 10px;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.items div p {
+    position: absolute;
+    padding-left: 15px;
+    padding-top: 3px;
+    display: inline-block;
+}
+
+li {
+    height: 25px;
+}
+
+.footerElements {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerElements img {
+    height: 75px;
+    width: auto;
+}
