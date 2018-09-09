@@ -14,7 +14,7 @@ i {
 
 .main-container {
     width: 600px;
-    height: 500px;
+    height: 530px;
     margin: auto;
     margin-top: 50px;
     display: flex;
@@ -22,8 +22,8 @@ i {
     border: 1px solid black;
 }
 
-.headerElements {
-    height: 125px;
+.header-elements {
+    height: 155px;
     border-bottom: 2px solid black;
     margin-left: 15px;
     margin-right: 35px;
@@ -32,7 +32,7 @@ i {
     align-items: center;
 }
 
-.headerElements h1 {
+.header-elements h1 {
     padding-top: 20px;
 }
 
@@ -44,25 +44,35 @@ i {
     justify-content: flex-start;
 }
 
-
-.headerElements input {
+.header-elements input {
     margin: 0 5px 0 0;
     padding: 3px;
     width: 470px;
 }
 
-.listItemsBlock {
+.message {
+    padding-top: 8px;
+    animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.list-items-block {
     height: 275px;
     overflow: auto;
     padding: 10px 35px 10px 10px;
 }
 
-.items {
+.item {
     display: flex;
     justify-content: space-between;
 }
 
-.items div p {
+.item div p {
     position: absolute;
     padding-left: 15px;
     padding-top: 3px;
@@ -73,14 +83,39 @@ li {
     height: 25px;
 }
 
-.footerElements {
+.footer-elements {
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.footerElements img {
+.footer-elements img {
     height: 75px;
     width: auto;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+#items {
+    list-style-type: none;
+}
+
+.item {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: center;
+    cursor: move;
+}
+
+.column.dragElem {
+    opacity: 0.4;
+}
+
+.column.over {
+    border: 2px dashed #000;
+    border-top: 2px solid blue;
 }
