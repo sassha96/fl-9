@@ -1,7 +1,7 @@
 let rootNode = document.getElementById('root');
 let contentNode = (function () {
 
-    let content = document.createElement('div');
+    const content = document.createElement('div');
     content.setAttribute('class', 'main-container');
 
     const page = {
@@ -56,7 +56,7 @@ let contentNode = (function () {
     footerElements.catImg.setAttribute('src', './assets/img/cat.png');
     page.footerElements.appendChild(footerElements.catImg);
     content.appendChild(page.footerElements);
-    let items = {
+    const items = {
         allItems: [],
         ZERO: 0,
         ONE: 1,
@@ -71,12 +71,51 @@ let contentNode = (function () {
         }
     })
 
-    // Dragging
+    // DRAG functions
+    let dragSrcEl = null;
 
+    function handleDragStart(e) {
+        this.style.opacity = '0.4';
+        dragSrcEl = this;
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/html', this.innerHTML);
+    }
+
+    function handleDragOver(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        e.dataTransfer.dropEffect = 'move';
+        return false;
+    }
+
+    function handleDragEnter(e) {
+        this.classList.add('over');
+    }
+
+    function handleDragLeave(e) {
+        this.classList.remove('over');
+    }
+
+    function handleDrop(e) {
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        }
+
+        if (dragSrcEl != this) {
+            dragSrcEl.innerHTML = this.innerHTML;
+            this.innerHTML = e.dataTransfer.getData('text/html');
+        }
+        return false;
+    }
+
+    function handleDragEnd(e) {
+        this.style.opacity = '1';
+    }
 
     // Creating list item
     function addListItem() {
-        let listComp = {
+        const listComp = {
             inputField: document.getElementById('headerInputField'),
             inputValue: document.getElementById('headerInputField').value,
             item: document.createElement('li'),
@@ -105,13 +144,15 @@ let contentNode = (function () {
                 listComp.item.setAttribute('draggable', 'true');
                 listComp.deleteIco.setAttribute('class', 'material-icons');
                 listComp.deleteIco.innerHTML = 'delete';
-                listComp.deleteIco.addEventListener('click', () => {
+                listComp.deleteIco.addEventListener('click', ()=>{
                     if (document.querySelector('.message')) {
                         document.querySelector('.message').remove();
                     }
                     items.allItems.pop();
                     listComp.item.remove();
-                    headerElements.addButton.disabled = false;
+                    if (headerElements.inputValue.length > 0) {
+                        headerElements.addButton.disabled = false;
+                    }
                 });
                 listComp.ico.setAttribute('class', 'material-icons');
                 listComp.ico.innerHTML = 'check_box_outline_blank';
@@ -123,6 +164,14 @@ let contentNode = (function () {
                 listComp.itemsFirstBlock.appendChild(listComp.description);
                 listComp.item.appendChild(listComp.itemsFirstBlock);
                 listComp.item.appendChild(listComp.deleteIco);
+
+                // Listeners for drag`n`drop
+                listComp.item.addEventListener('dragstart', handleDragStart, false);
+                listComp.item.addEventListener('dragenter', handleDragEnter, false)
+                listComp.item.addEventListener('dragover', handleDragOver, false);
+                listComp.item.addEventListener('dragleave', handleDragLeave, false);
+                listComp.item.addEventListener('drop', handleDrop, false);
+                listComp.item.addEventListener('dragend', handleDragEnd, false);
                 listBlock.list.appendChild(listComp.item);
 
                 if (items.allItems.length >= items.maxListItems) {
